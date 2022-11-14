@@ -1,9 +1,10 @@
 import Image from 'next/image';
-import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
+import { MagnifyingGlassIcon, PlusCircleIcon } from '@heroicons/react/24/outline';
+import { HomeIcon } from '@heroicons/react/24/solid';
 
 const Header = () => {
 	return (
-		<div className='flex items-center justify-between max-w-6xl'>
+		<div className='flex items-center justify-between max-w-6xl mx-4 xl:mx-auto'>
 			{/* Left */}
 			<div className='cursor-pointer h-24 w-24 relative hidden lg:inline-grid'>
 				<Image
@@ -33,8 +34,15 @@ const Header = () => {
 			</div>
 
 			{/* Right */}
-
-			<h1>Right Side</h1>
+			<div className='flex items-center space-x-4'>
+				<HomeIcon className='hidden md:inline-flex h-6 cursor-pointer hover:scale-125 transition-transform duration-200 ease-out' />
+				<PlusCircleIcon className='h-6 cursor-pointer hover:scale-125 transition-transform duration-200 ease-out' />
+				<img
+					src='https://static.skillshare.com/uploads/users/350301760/user-image-large.jpg?753816048'
+					alt='user-image'
+					className='h-10 rounded-full cursor-pointer'
+				/>
+			</div>
 		</div>
 	);
 };
