@@ -1,3 +1,4 @@
+import { BookmarkIcon, ChatBubbleOvalLeftIcon, HeartIcon } from '@heroicons/react/24/outline';
 import { EllipsisHorizontalIcon } from '@heroicons/react/24/solid';
 
 export default function Post({ id, username, userImg, img, caption }) {
@@ -16,6 +17,16 @@ export default function Post({ id, username, userImg, img, caption }) {
 
 			{/* Post Image */}
 			<img className='object-cover w-full' src={img} alt={username} />
+
+			{/* Post Buttons */}
+			<div className='flex justify-between px-4 pt-4'>
+				<div className='flex space-x-4'>
+					<HeartIcon className='btn' />
+					<ChatBubbleOvalLeftIcon className='btn' />
+				</div>
+
+				<BookmarkIcon className='btn' />
+			</div>
 		</div>
 	);
 }
