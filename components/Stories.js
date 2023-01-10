@@ -14,7 +14,6 @@ export default function Stories() {
 		}));
 
 		setStoryUsers(storyUsers);
-		console.log(storyUsers);
 	}, []);
 
 	return (
