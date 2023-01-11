@@ -4,10 +4,12 @@ import { HomeIcon } from '@heroicons/react/24/solid';
 import { useSession, signIn, signOut } from 'next-auth/react';
 import { useRecoilState } from 'recoil';
 import { modalState } from '../atom/modalAtom';
+import { useRouter } from 'next/router';
 
 const Header = () => {
 	const { data: session } = useSession();
 	const [open, setOpen] = useRecoilState(modalState);
+	const router = useRouter();
 
 	return (
 		<div className='shadow-sm border-b sticky top-0 bg-white z-30'>
@@ -18,6 +20,7 @@ const Header = () => {
 						src='http://www.jennexplores.com/wp-content/uploads/2015/09/Instagram_logo_black.png'
 						fill
 						className='object-contain'
+						onClick={() => router.push('/')}
 					/>
 				</div>
 				<div className='cursor-pointer h-24 w-10 relative lg:hidden'>
@@ -25,6 +28,7 @@ const Header = () => {
 						src='https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/800px-Instagram_logo_2016.svg.png'
 						fill
 						className='object-contain'
+						onClick={() => router.push('/')}
 					/>
 				</div>
 
@@ -42,7 +46,10 @@ const Header = () => {
 
 				{/* Right */}
 				<div className='flex items-center space-x-4'>
-					<HomeIcon className='hidden md:inline-flex h-6 cursor-pointer hover:scale-125 transition-transform duration-200 ease-out' />
+					<HomeIcon
+						onClick={() => router.push('/')}
+						className='hidden md:inline-flex h-6 cursor-pointer hover:scale-125 transition-transform duration-200 ease-out'
+					/>
 
 					{session ? (
 						<>
